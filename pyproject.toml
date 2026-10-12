@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-agent-orchestrator"
+version = "0.1.0"
+description = "A production-shaped, dependency-free multi-agent orchestration showcase"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Showcase Project"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "cryptography>=42"]
+secure = ["cryptography>=42"]
+
+[project.scripts]
+orchestrator-demo = "orchestrator.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"

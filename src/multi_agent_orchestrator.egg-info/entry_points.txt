@@ -1,0 +1,2 @@
+[console_scripts]
+orchestrator-demo = orchestrator.demo:main
